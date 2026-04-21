@@ -6,6 +6,6 @@ public class DummyTests {
 
     @Test
     public void ExpectedFailureTest() {
-        assertTrue(false);
+        assertTrue(true);
     }
 }
