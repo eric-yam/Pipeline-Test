@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Step 2 - Build Maven Project
-        run: mvn clean install
+        run: mvn clean install -DskipTests
 
       - name: Step 3 - Execute Tests
         run: mvn test
