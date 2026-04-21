@@ -39,5 +39,5 @@ jobs:
           java --version
           echo 
           echo Maven version installed:
-          echo mvn --version
+          mvn --version
           
