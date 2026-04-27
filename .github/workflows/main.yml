@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v5.2.0
         with:
           java-version: 17
-          distribution: oracle
+          distribution: temurin
     
       # Builds/Executes Maven project, omits logs on dependency download progress
       - name: Step 2 - Build/Execute Tests
