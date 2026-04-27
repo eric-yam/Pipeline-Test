@@ -26,7 +26,12 @@ jobs:
       - name: Step 1 - Checkout to GitHub workspace
         uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
+      - name: Step 2 - Setup Java JDK
+        uses: actions/setup-java@v5.2.0
+        with:
+          java-version: 17
+    
+      # Builds/Executes Maven project, omits logs on dependency download progress
       - name: Step 2 - Build/Execute Tests
         run: mvn -B clean verify --no-transfer-progress
 
