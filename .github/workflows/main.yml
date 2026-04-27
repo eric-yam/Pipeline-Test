@@ -46,11 +46,8 @@ jobs:
       - name: Build tool versions
         run: |
           echo Currently in this directory:
-          ls -a
+          ls
           echo 
           echo Java version installed: 
           java --version
-          echo 
-          echo Maven version installed:
-          mvn --version
           
