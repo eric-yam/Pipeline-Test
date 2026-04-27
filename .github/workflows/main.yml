@@ -48,6 +48,12 @@ jobs:
           echo Currently in this directory:
           ls
           echo 
+          echo Currently in target directory:
+          cd target
+          ls
+          echo 
           echo Java version installed: 
           java --version
+          echo Allure version installed: 
+          allure --version
           
