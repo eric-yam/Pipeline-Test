@@ -31,7 +31,7 @@ jobs:
         run: mvn -B clean verify --no-transfer-progress
 
       # Runs a set of commands using the runners shell
-      - name: Build tool verions
+      - name: Build tool versions
         run: |
           echo Currently in this directory:
           ls -a
