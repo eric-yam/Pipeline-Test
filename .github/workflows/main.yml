@@ -36,10 +36,19 @@ jobs:
       - name: Step 2 - Build/Execute Tests
         run: mvn -B clean verify --no-transfer-progress
 
-      # 4. Run tests (must use Allure reporter)
-      - name: Run tests and generate report
-        run: npx allure run -- npm run test
-        # This generates allure-results/ directory and creates allure-report/ with summary.json
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.12
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_report: target/allure-report
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-report
+          path: target/allure-report
 
       # Runs a set of commands using the runners shell
       - name: Build tool versions
