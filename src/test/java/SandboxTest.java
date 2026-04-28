@@ -8,4 +8,9 @@ public class SandboxTest {
     public void Test_01() {
         assertTrue(true);
     }
+
+    @Test
+    public void Test_02() {
+
+    }
 }
