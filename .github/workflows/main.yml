@@ -65,4 +65,4 @@ jobs:
           cd target
           echo
           echo Current:
-          cd allure-report
+          ls                  
