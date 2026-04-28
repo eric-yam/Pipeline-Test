@@ -40,20 +40,4 @@ jobs:
         uses: allure-framework/allure-action@v0
         with:
           # The report directory to scan for files
-          report-directory: # optional, default is ./allure-report
-
-      # Runs a set of commands using the runners shell
-      - name: Build tool versions
-        run: |
-          echo Currently in this directory:
-          ls
-          echo 
-          echo Currently in target directory:
-          cd target
-          ls
-          echo 
-          echo Java version installed: 
-          java --version
-          echo Allure version installed: 
-          allure --version
-          
+          report-directory: ./allure-report
