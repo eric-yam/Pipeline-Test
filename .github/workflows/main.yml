@@ -62,7 +62,7 @@ jobs:
         run: |
           echo Current:
           ls
-          cd target/allure-report
+          cd target/allure-results
           echo
           echo Current:
           ls                  
