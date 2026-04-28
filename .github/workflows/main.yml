@@ -41,7 +41,7 @@ jobs:
 
       - name: Allure
         run: |
-          allure generate --clean
+          allure generate
 
 
       # - name: Allure Report Official
