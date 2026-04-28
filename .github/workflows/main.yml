@@ -33,13 +33,7 @@ jobs:
           distribution: temurin
 
       - name: Install Allure
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.27.0.zip
-          unzip allure-2.27.0.zip
-          sudo mv allure-2.27.0 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+        run: npm install -g allure
     
       # Builds/Executes Maven project, omits logs on dependency download progress
       - name: Step 2 - Build/Execute Tests
