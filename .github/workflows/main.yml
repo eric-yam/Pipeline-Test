@@ -48,7 +48,8 @@ jobs:
         uses: allure-framework/allure-action@v0
         with:
           # The report directory to scan for files
-          report-directory: ./allure-report
+          allure-results: allure-results
+          report-directory: allure-report
                               
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
