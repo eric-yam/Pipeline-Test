@@ -41,24 +41,3 @@ jobs:
         with:
           # The report directory to scan for files
           report-directory: ./allure-report
-
-      - name: Step 4 - Generate Allure Report
-        uses: simple-elf/allure-report-action@v1.7
-        if: always()  # Run even if tests fail
-        with:
-          allure_results: allure-results        # folder Maven writes raw results to
-          allure_report: allure-report          # folder the HTML report is generated into
-          allure_history: allure-history        # optional: tracks history across runs
-          keep_reports: 10                      # optional: number of past reports to keep
-
-      - name: Step 5 - Upload Allure Report as Artifact
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: allure-report
-          path: allure-report/
-          retention-days: 30
-
-      - name: Step 6 - Verify Allure CLI version
-        if: always()
-        run: allure --version
