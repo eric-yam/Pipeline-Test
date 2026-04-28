@@ -56,13 +56,13 @@ jobs:
           # Artifact name. If the `archive` input is `false`, the name of the file uploaded will be the artifact name.
           name: allure-report
           # A file, directory or wildcard pattern that describes what to upload.
-          path: target/allure-report
+          path: target/allure-report/
 
       - name: Look at directory
         run: |
           echo Current:
           ls
-          cd target
+          cd target/allure-report
           echo
           echo Current:
           ls                  
