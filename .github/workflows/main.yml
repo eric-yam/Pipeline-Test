@@ -32,14 +32,14 @@ jobs:
           java-version: 17
           distribution: temurin
 
-      - name: Allure
+      - name: Install Allure
         run: npm install -g allure          
     
       # Builds/Executes Maven project, omits logs on dependency download progress
       - name: Step 2 - Build/Execute Tests
         run: mvn -B clean verify --no-transfer-progress
 
-      - name: Allure
+      - name: Generate Allure Report
         run: |
           allure generate
 
