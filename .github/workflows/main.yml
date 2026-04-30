@@ -46,17 +46,10 @@ jobs:
         run: mvn -B clean verify --no-transfer-progress
 
       - name: Generate Allure Report
+        if: always()
         run: |
           allure generate
 
-
-      # - name: Allure Report Official
-      #   # You may pin to the exact commit or the version.
-      #   # uses: allure-framework/allure-action@c24234151c027cfee99e00eb6ec2dac1eb350414
-      #   uses: allure-framework/allure-action@v0
-      #   with:
-      #     # The report directory to scan for files
-      #     report-directory: target/allure-report
                               
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
