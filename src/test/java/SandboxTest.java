@@ -12,7 +12,7 @@ public class SandboxTest {
 
     @Test
     public void Test_02() {
-        String u = System.getenv("incorrectusernamevairablename");
+        String u = System.getenv("DEV_USERNAME");
         String p = System.getenv("DEV_PASSWORD");
 
         System.out.println("Username: " + u);
@@ -20,6 +20,6 @@ public class SandboxTest {
 
         Allure.step("Show the environment variables. Username: " + u +" Password: "+ p, () -> {
 
-        });
+        }); //successfully found.
     }
 }
