@@ -19,7 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    permissions:
+    permissions: # Added permissions to allow access to GitHub pages
       id-token: write
       pages: write
 
@@ -45,16 +45,16 @@ jobs:
       - name: Step 4 - Build/Execute Tests
         run: mvn -B clean verify --no-transfer-progress
 
-      - name: Generate Allure Report
+      - name: Step 5 - Generate Allure Report
         if: always()
         run: |
           allure generate
 
-      - name: Step 5 - Configure GitHub Pages
+      - name: Step 6 - Configure GitHub Pages
         if: always()
         uses: actions/configure-pages@v6.0.0
 
-      - name: Step 6 - Upload GitHub Pages artifact
+      - name: Step 7 - Upload GitHub Pages artifact
         if: always()
         uses: actions/upload-pages-artifact@v5.0.0
         with:
@@ -63,7 +63,7 @@ jobs:
           # Path of the directory containing the static assets.
           path: allure-report
 
-      - name: Step 7 - Deploy GitHub Pages site
+      - name: Step 8 - Deploy GitHub Pages site
         if: always()
         uses: actions/deploy-pages@v3.0.2-node.24
         with:
