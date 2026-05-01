@@ -1,3 +1,4 @@
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,5 +17,9 @@ public class SandboxTest {
 
         System.out.println("Username: " + u);
         System.out.println("Password: " + p);
+
+        Allure.step("Show the environment variables. Username: " + u +" Password: "+ p, () -> {
+
+        });
     }
 }
