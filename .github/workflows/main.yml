@@ -43,6 +43,9 @@ jobs:
 
       # Builds/Executes Maven project, omits logs on dependency download progress
       - name: Step 4 - Build/Execute Tests
+        env: # Or as an environment variable
+          DEV_USERNAME: ${{ secrets.DEV_USERNAME }}
+          DEV_PASSWORD: ${{ secrets.DEV_PASSWORD }}
         run: mvn -B clean verify --no-transfer-progress
 
       - name: Step 5 - Generate Allure Report
